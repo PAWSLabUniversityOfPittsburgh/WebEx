@@ -1,0 +1,266 @@
+package com.a2teal.actserv.webex;
+
+import java.io.*;
+import java.lang.*;
+import java.net.*;
+import java.sql.*;
+import java.util.*;
+import java.text.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+ 
+public class Dissection3 extends HttpServlet {
+ 
+private Connection con;
+private PrintWriter out;
+
+ 
+public void init(ServletConfig conf)
+        throws ServletException {
+ 
+    super.init(conf);
+ 
+    try{
+ 
+        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+ 
+        con =DriverManager.getConnection("jdbc:odbc:Dissection", "", "");
+    }catch(Exception e) {
+            System.err.println("init:\n"+e);
+    }
+ 
+}
+ 
+public void doGet(HttpServletRequest req,
+        HttpServletResponse res)
+    throws ServletException, IOException {
+ 
+	String ump = URLEncoder.encode("http://kt1.exp.sis.pitt.edu:8080/um/um?p1=12&p2=ert&p3=we will&p4=~!$","UTF-8");
+
+    String query = req.getQueryString(); 
+    String um = req.getParameter("um");
+    if(um != null)
+	um = URLDecoder.decode(um,"UTF-8");
+System.out.println("[webex] um = " + um);    
+    String strline = req.getParameter("intline");
+    String program = req.getParameter("program");
+    String kt_sid = req.getParameter("kt_sid");
+    String kt_user = req.getParameter("kt_user");
+		// vvvvvvvv Inserted by Michael Yudelson
+    String report = req.getParameter("report");
+//System.err.println("Dissection: report string " + report);	
+	if (report == null) report = "";
+	HttpSession session = req.getSession();
+	ServletContext context = getServletContext();
+	String UMServlet = context.getInitParameter("UMServlet");
+//System.err.println("UMServlet " + UMServlet);
+		// ^^^^^^^^ Inserted by Michael Yudelson
+    
+    res.setContentType("text/html");
+
+    try {
+        out = res.getWriter();
+		// vvvvvvvv Inserted by Michael Yudelson
+/*		HttpSession session = req.getSession();
+		session.setAttribute("progress", "1");
+System.err.println("progress parameterr added");*/
+		// ^^^^^^^^ Inserted by Michael Yudelson
+
+		// vvvvvvvv Inserted by Michael Yudelson
+		out.println("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>");
+		out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
+		out.println("<link href='/webex/system/Y2g.css' rel='stylesheet' type='text/css'>");
+		
+		// ^^^^^^^^ Inserted by Michael Yudelson
+
+
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title> Example" + program + "</title>");
+        out.println("</head>");
+		
+		// vvvvvvvv Inserted by Michael Yudelson
+//		out.println("<script languag='javascript'>");
+//		out.println("	function Report()");
+//		out.println("	{");
+//		out.println("		window.open(\"http://kt2.exp.sis.pitt.edu:8080/Y2/kt/ShowLeft?progress=yes\",\"leftFrame\");");
+//		out.println("	}");
+//		out.println("</script>");/**/
+		// ^^^^^^^ Inserted by Michael Yudelson
+
+        out.println("<body bgcolor=white>");
+        out.println("<font color='#800000'>");
+
+		if (strline==null||program==null||kt_sid==null||kt_user==null) {
+			out.println("<H3>Invalid parament</H3>");
+			return;
+		}
+    	int intline = Integer.parseInt(strline);
+	    int offset=5,i=0;
+    	int lineno=0;
+
+		// ATTN INTLINE HAS TO BE >0 to send an info into UM
+		if (intline>0) {
+            URLConnection dbpc = (new URL(UMServlet + "?kt_user="+kt_user+"&kt_sid="+kt_sid+"&app=3&activity="+program+"&activity_id="+intline+"&result=1&um="+ump)).openConnection();
+		    BufferedReader in = new BufferedReader(new InputStreamReader(dbpc.getInputStream()));
+//System.err.println("Dissection: action reported");
+		    //String inputLine;
+		    //while ((inputLine = in.readLine()) != null) 
+            //    out.println(inputLine);
+            //in.close();
+		}
+
+		if (intline<=offset) out.println("<A name=pos></A>");
+        out.println("<B><H3>Example "+program+" </H3></b></font>");
+		out.println("<font size=-1>Click on a green bullet to see the annotation. </font><p>");
+        /*
+        out.println("intline="+strline+
+                    "<BR>program="+program+
+                    "<BR>kt_sid="+kt_sid+
+                    "<BR>23kt_user="+kt_user);
+        */
+
+
+    	String code="",comment="",tmp="",display="";
+    	String sql = "SELECT Code,Comments,LNo FROM Dis where ProgID =" + program + "  order by LNo";
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+ 
+        out.println("<Table class='Code' border=0>");
+        out.println("\t<TR valign=top>");
+        out.println("\t\t<TD width=50%>");
+        out.println("\t\t\t<Table width=100% border=0 cellspacing=0 cellpadding=0>");
+        
+        byte[] com = new byte[4096];
+        int count;        
+
+        while(rs.next()) {
+            lineno = rs.getInt("LNo");	
+     	    code = "&nbsp;&nbsp;"+convertString(rs.getString("Code"));
+            count=rs.getAsciiStream("Comments").read(com);
+            if (count<1) comment="";
+            else comment = (new String(com,0,count)).trim();
+            if (lineno==intline) break;
+            out.println("\t\t\t\t<TR><TD width=16 valign=top>");
+            if (lineno==intline-offset) out.println("<A name=pos></A>");
+
+			String url = "Dissection3?intline="+lineno+ "&program="+program+ 
+				"&kt_sid="+kt_sid+ "&kt_user="+kt_user+ "&report=" + report + "&um=" + ump +
+				"#pos'"+ " onClick=\"Report();\"";
+//			url = res.encodeURL(url);
+
+            if (comment.length()!=0) {
+            	out.println("<A Href='"+ url + ">");
+//System.err.println("Dissection: url " + url);	
+//System.err.println("Dissection: report " + report);	
+												
+            	out.println("\t\t\t\t\t<img SRC='../image/b2ogreen.gif' BORDER=0></A>");}
+            else
+            	out.println("\t\t\t\t\t<img SRC='../image/b2owhite.gif' BORDER=0>");
+            out.println("\t\t\t\t    <TD valign=top>"+code+"");
+//            out.println("\t\t\t\t    <TD valign=top><tt>"+code+"</tt>");
+            out.println("\t\t\t\t</TR>");
+        }
+        out.println("\t\t\t</Table>");
+        out.println("\t\t<TD width=50%>&nbsp;");
+        out.println("\t</TR>");
+        out.println("\t<TR valign=top>");
+        out.println("\t\t<TD width=50%><p>");
+        out.println("\t\t\t<Table width=100% border=0 cellspacing=0 cellpadding=0>");
+        if (intline>0) {
+           display = convertString(comment);
+           out.println("\t\t\t\t<TR><TD width=16 valign=top>");
+           if (display.length()!=0)
+       	       out.println("\t\t\t\t\t<img SRC='../image/b2xgreen.gif' BORDER=0>");
+           else
+               out.println("\t\t\t\t\t<img SRC='../image/b2owhite.gif' BORDER=0>");
+           out.println("\t\t\t\t    <TD valign=top><font color=maroon><B>"+code+"</B></font>");
+//           out.println("\t\t\t\t    <TD valign=top><font color=maroon><B><tt>"+code+"</tt></B></font>");
+           out.println("\t\t\t\t</TR>");
+        }
+        while(rs.next()) {
+            lineno = rs.getInt("LNo");	
+            //comment = rs.getString("Comments");
+            count=rs.getAsciiStream("Comments").read(com);
+            if (count<1) comment="";
+            else comment = (new String(com,0,count)).trim();
+	        code = "&nbsp;&nbsp;"+convertString(rs.getString("Code"));
+            out.println("\t\t\t\t<TR><TD width=16 valign=top>");
+ 
+ 			String url = "Dissection3?intline="+lineno+ "&program="+program+ 
+				"&kt_sid="+kt_sid+ "&kt_user="+kt_user+ "&report=" + report + "&um=" + ump +
+				"#pos'"+ " onClick=\"Report();\"";
+//			url = res.encodeURL(url);
+            if (comment.length()!=0) {
+            	out.println("<A Href='"+ url + ">");
+//System.err.println("Dissection: url2 " + url);	
+//System.err.println("Dissection: report " + report);	
+
+            	out.println("\t\t\t\t\t<img SRC='../image/b2ogreen.gif' BORDER=0></A>");}
+            else
+            	out.println("\t\t\t\t\t<img SRC='../image/b2owhite.gif' BORDER=0>");
+            out.println("\t\t\t\t    <TD valign=top>"+code+"");
+//            out.println("\t\t\t\t    <TD valign=top><tt>"+code+"</tt>");
+            out.println("\t\t\t\t</TR>");
+        };
+        out.println("\t\t\t</Table>");
+        out.println("\t\t<TD width=50%><Table bgcolor='#FFFF00'><TR><TD valign=top>");
+		if (offset==0) out.println("<A name=pos></A>");
+        out.println(display+"</TR></Table>");
+        out.println("\t</TR>");
+        out.println("</Table>");
+ 
+        rs.close();
+ 
+        stmt.close();
+ 
+    } catch(SQLException e) {
+ 
+        out.println(e+"<br>Error code:"+e.getErrorCode()+"<br>State:"+e.getSQLState()+"<br>An SQL Exception was thrown.");
+ 
+    } catch(IOException e) {
+ 
+        System.err.println("\nAn IOException was thrown.");
+        e.printStackTrace(System.err);
+ 
+    }
+ 
+    out.println("</body>");
+ 
+    out.println("</html>");
+    out.close();
+}
+
+private String convertString(String str) {
+	StringBuffer sbuf = new StringBuffer();
+	if (str==null) return "";
+	if (str.length()==0) return "";
+	int i=0;
+	char c;
+	while (i<str.length()&&(c=str.charAt(i++))==' ') sbuf.append("&nbsp;");
+	i--;
+	for (; i<str.length(); i++) {
+		c = str.charAt(i);
+		if (c=='<')
+			sbuf.append("&lt;");
+		else if (c=='>')
+			sbuf.append("&gt;");
+		else if (c=='&')
+			sbuf.append("&amp;");
+		else if (c=='"')
+			sbuf.append("&quot;");
+		else sbuf.append(c);
+	}	
+	return sbuf.toString();
+}
+ 
+public void destroy(){
+ 
+    try{
+        con.close();
+    }catch(SQLException e) {
+        ;
+    }
+}
+}
+ 

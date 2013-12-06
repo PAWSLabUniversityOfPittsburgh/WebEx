@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context docBase="webex" path="/webex" debug="1" reloadable="true">
+	<Realm className="org.apache.catalina.realm.JDBCRealm"
+		connectionName="student"
+		connectionPassword="student"
+		connectionURL="jdbc:mysql://localhost/portal_test2"
+		digest="md5"
+		driverName="com.mysql.jdbc.Driver"
+		roleNameCol="Role"
+		userCredCol="Pass"
+		userNameCol="Login"
+		userRoleTable="seq_role"
+		userTable="ent_user"/>
+
+	<Resource name="jdbc/webex"
+		auth="Container"
+		type="javax.sql.DataSource" 
+		username="student" 
+		password="student"
+		driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://localhost/webex21"
+		maxActive="30" 
+		maxIdle="10"/>
+		
+</Context>

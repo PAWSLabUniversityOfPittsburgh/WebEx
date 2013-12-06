@@ -1,0 +1,504 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Michael Yudelson</LastAuthor>
+  <LastSaved>2008-10-27T04:02:18Z</LastSaved>
+  <Version>12.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>13600</WindowHeight>
+  <WindowWidth>26000</WindowWidth>
+  <WindowTopX>140</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Table1">
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="31" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110.0" ss:Span="1"/>
+   <Row>
+    <Cell><Data ss:Type="String">LineIndex</Data></Cell>
+    <Cell><Data ss:Type="String">Code</Data></Cell>
+    <Cell><Data ss:Type="String">Comment</Data></Cell>
+    <Cell><Data ss:Type="String">HTML</Data></Cell>
+    <Cell><Data ss:Type="String">HTML DIV</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String">/*    Example: Exchange kiosk</Data></Cell>
+    <Cell><Data ss:Type="String">This comment is known as header comment. It provides details about the program: author, goal, version, content, etc.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line1' class='wx_classic_code'&gt;/*    Example: Exchange kiosk&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line1annot' class='wx_classic_annot'&gt;This comment is known as header comment. It provides details about the program: author, goal, version, content, etc.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line1icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line1cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line1' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;/*    Example: Exchange kiosk&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line1annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;This comment is known as header comment. It provides details about the program: author, goal, version, content, etc.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String">    Course: IS 0012</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line2' class='wx_classic_code'&gt;    Course: IS 0012&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line2cbx' class='wx_code_box_noannot'&gt;&lt;a id='line2' name='line' title='-'&gt;    Course: IS 0012&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String">    Author: Peter Brusilovsky</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line3' class='wx_classic_code'&gt;    Author: Peter Brusilovsky&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line3cbx' class='wx_code_box_noannot'&gt;&lt;a id='line3' name='line' title='-'&gt;    Author: Peter Brusilovsky&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line4' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line4cbx' class='wx_code_box_noannot'&gt;&lt;a id='line4' name='line' title='-'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String">    This program calculates the amount of dollars</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line5' class='wx_classic_code'&gt;    This program calculates the amount of dollars&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line5cbx' class='wx_code_box_noannot'&gt;&lt;a id='line5' name='line' title='-'&gt;    This program calculates the amount of dollars&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String">    received in an exchange kiosk for the given</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line6' class='wx_classic_code'&gt;    received in an exchange kiosk for the given&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line6cbx' class='wx_code_box_noannot'&gt;&lt;a id='line6' name='line' title='-'&gt;    received in an exchange kiosk for the given&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String">    amount in German marks</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line7' class='wx_classic_code'&gt;    amount in German marks&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line7cbx' class='wx_code_box_noannot'&gt;&lt;a id='line7' name='line' title='-'&gt;    amount in German marks&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String">*/</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line8' class='wx_classic_code'&gt;*/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line8cbx' class='wx_code_box_noannot'&gt;&lt;a id='line8' name='line' title='-'&gt;*/&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line9' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line9cbx' class='wx_code_box_noannot'&gt;&lt;a id='line9' name='line' title='-'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">10.0</Data></Cell>
+    <Cell><Data ss:Type="String">#include &lt;stdio.h&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">We need this line since we are using printf</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line10' class='wx_classic_code'&gt;#include &lt;stdio.h&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line10annot' class='wx_classic_annot'&gt;We need this line since we are using printf&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line10icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line10cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line10' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;#include &lt;stdio.h&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line10annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;We need this line since we are using printf&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">11.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line11' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line11cbx' class='wx_code_box_noannot'&gt;&lt;a id='line11' name='line' title='-'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">12.0</Data></Cell>
+    <Cell><Data ss:Type="String">void main()</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line12' class='wx_classic_code'&gt;void main()&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line12cbx' class='wx_code_box_noannot'&gt;&lt;a id='line12' name='line' title='-'&gt;void main()&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">13.0</Data></Cell>
+    <Cell><Data ss:Type="String">{</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line13' class='wx_classic_code'&gt;{&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line13cbx' class='wx_code_box_noannot'&gt;&lt;a id='line13' name='line' title='-'&gt;{&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">14.0</Data></Cell>
+    <Cell><Data ss:Type="String">    float dollars_for_mark; /* exchange rate */</Data></Cell>
+    <Cell><Data ss:Type="String">Floating point variable dollars_for_mark is declared. Comment helps to understand what will be stored in this variable.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line14' class='wx_classic_code'&gt;    float dollars_for_mark; /* exchange rate */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line14annot' class='wx_classic_annot'&gt;Floating point variable dollars_for_mark is declared. Comment helps to understand what will be stored in this variable.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line14icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line14cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line14' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    float dollars_for_mark; /* exchange rate */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line14annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Floating point variable dollars_for_mark is declared. Comment helps to understand what will be stored in this variable.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">15.0</Data></Cell>
+    <Cell><Data ss:Type="String">    int commission; /* comission in dollars */</Data></Cell>
+    <Cell><Data ss:Type="String">Integer variable commission is declared. Comment helps to understand what will be stored in this variable.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line15' class='wx_classic_code'&gt;    int commission; /* comission in dollars */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line15annot' class='wx_classic_annot'&gt;Integer variable commission is declared. Comment helps to understand what will be stored in this variable.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line15icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line15cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line15' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    int commission; /* comission in dollars */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line15annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Integer variable commission is declared. Comment helps to understand what will be stored in this variable.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="String">    float marks; /* marks given */</Data></Cell>
+    <Cell><Data ss:Type="String">Floating point variable marks is declared. Comment helps to understand what will be stored in this variable.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line16' class='wx_classic_code'&gt;    float marks; /* marks given */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line16annot' class='wx_classic_annot'&gt;Floating point variable marks is declared. Comment helps to understand what will be stored in this variable.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line16icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line16cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line16' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    float marks; /* marks given */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line16annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Floating point variable marks is declared. Comment helps to understand what will be stored in this variable.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">17.0</Data></Cell>
+    <Cell><Data ss:Type="String">    float dollars; /* dollars returned */</Data></Cell>
+    <Cell><Data ss:Type="String">Floating point variable dollars is declared. Comment helps to understand what will be stored in this variable.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line17' class='wx_classic_code'&gt;    float dollars; /* dollars returned */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line17annot' class='wx_classic_annot'&gt;Floating point variable dollars is declared. Comment helps to understand what will be stored in this variable.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line17icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line17cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line17' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    float dollars; /* dollars returned */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line17annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Floating point variable dollars is declared. Comment helps to understand what will be stored in this variable.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">18.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell><Data ss:Type="String">Using empty lines to separate program parts helps to make it more readable</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line18' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line18annot' class='wx_classic_annot'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line18icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line18cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line18' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line18annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">19.0</Data></Cell>
+    <Cell><Data ss:Type="String">    /* get data */</Data></Cell>
+    <Cell><Data ss:Type="String">Comments at the beginning of a program logical part helps tp understand what's going on.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line19' class='wx_classic_code'&gt;    /* get data */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line19annot' class='wx_classic_annot'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line19icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line19cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line19' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    /* get data */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line19annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+    <Cell><Data ss:Type="String">    dollars_for_mark = 0.666;</Data></Cell>
+    <Cell><Data ss:Type="String">This is a simple assignment statement. Variable of type float receives a floating point value 0.666. Yet, there is a conversion here: by default all floating point constants are of type double. So, C will convert 0.666 from double to float without the los</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line20' class='wx_classic_code'&gt;    dollars_for_mark = 0.666;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line20annot' class='wx_classic_annot'&gt;This is a simple assignment statement. Variable of type float receives a floating point value 0.666. Yet, there is a conversion here: by default all floating point constants are of type double. So, C will convert 0.666 from double to float without the los&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line20icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line20cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line20' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    dollars_for_mark = 0.666;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line20annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;This is a simple assignment statement. Variable of type float receives a floating point value 0.666. Yet, there is a conversion here: by default all floating point constants are of type double. So, C will convert 0.666 from double to float without the los&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">21.0</Data></Cell>
+    <Cell><Data ss:Type="String">    commission = 3;</Data></Cell>
+    <Cell><Data ss:Type="String">This is a simple assignment statement. Integer variable receives an integer value.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line21' class='wx_classic_code'&gt;    commission = 3;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line21annot' class='wx_classic_annot'&gt;This is a simple assignment statement. Integer variable receives an integer value.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line21icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line21cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line21' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    commission = 3;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line21annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;This is a simple assignment statement. Integer variable receives an integer value.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">22.0</Data></Cell>
+    <Cell><Data ss:Type="String">    marks = 100;</Data></Cell>
+    <Cell><Data ss:Type="String">Floating point variable received integer value. C will do the conversion from int to float, but no information is lost in this case.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line22' class='wx_classic_code'&gt;    marks = 100;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line22annot' class='wx_classic_annot'&gt;Floating point variable received integer value. C will do the conversion from int to float, but no information is lost in this case.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line22icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line22cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line22' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    marks = 100;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line22annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Floating point variable received integer value. C will do the conversion from int to float, but no information is lost in this case.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">23.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell><Data ss:Type="String">Using empty lines to separate program parts helps to make it more readable</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line23' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line23annot' class='wx_classic_annot'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line23icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line23cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line23' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line23annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">24.0</Data></Cell>
+    <Cell><Data ss:Type="String">    /* calculate USD */</Data></Cell>
+    <Cell><Data ss:Type="String">Comments at the beginning of a program logical part helps tp understand what's going on.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line24' class='wx_classic_code'&gt;    /* calculate USD */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line24annot' class='wx_classic_annot'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line24icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line24cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line24' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    /* calculate USD */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line24annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">25.0</Data></Cell>
+    <Cell><Data ss:Type="String">    dollars = marks * dollars_for_mark - commission;</Data></Cell>
+    <Cell><Data ss:Type="String">This line calculates the amount of dollars received using the exchange formula. Multiplication is executed first due to its higher priority. Blanks that separate operation sign (like = or *) from operands make the expression more redable</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line25' class='wx_classic_code'&gt;    dollars = marks * dollars_for_mark - commission;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line25annot' class='wx_classic_annot'&gt;This line calculates the amount of dollars received using the exchange formula. Multiplication is executed first due to its higher priority. Blanks that separate operation sign (like = or *) from operands make the expression more redable&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line25icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line25cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line25' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    dollars = marks * dollars_for_mark - commission;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line25annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;This line calculates the amount of dollars received using the exchange formula. Multiplication is executed first due to its higher priority. Blanks that separate operation sign (like = or *) from operands make the expression more redable&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">26.0</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell><Data ss:Type="String">Using empty lines to separate program parts helps to make it more readable</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line26' class='wx_classic_code'&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line26annot' class='wx_classic_annot'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line26icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line26cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line26' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;  &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line26annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Using empty lines to separate program parts helps to make it more readable&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">27.0</Data></Cell>
+    <Cell><Data ss:Type="String">    /* print results */</Data></Cell>
+    <Cell><Data ss:Type="String">Comments at the beginning of a program logical part helps tp understand what's going on.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line27' class='wx_classic_code'&gt;    /* print results */&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line27annot' class='wx_classic_annot'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line27icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line27cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line27' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    /* print results */&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line27annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;Comments at the beginning of a program logical part helps tp understand what's going on.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">28.0</Data></Cell>
+    <Cell><Data ss:Type="String">    printf(&quot;For %6.2f marks you will get %6.2f dollars! &quot;,</Data></Cell>
+    <Cell><Data ss:Type="String">This line prints results. All numbers are printed in 6.2 format - it prints exactly 2 digits after decimal point - representing cents and German pfennings</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line28' class='wx_classic_code'&gt;    printf(&quot;For %6.2f marks you will get %6.2f dollars! &quot;,&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line28annot' class='wx_classic_annot'&gt;This line prints results. All numbers are printed in 6.2 format - it prints exactly 2 digits after decimal point - representing cents and German pfennings&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line28icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line28cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line28' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;    printf(&quot;For %6.2f marks you will get %6.2f dollars! &quot;,&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line28annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;This line prints results. All numbers are printed in 6.2 format - it prints exactly 2 digits after decimal point - representing cents and German pfennings&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">29.0</Data></Cell>
+    <Cell><Data ss:Type="String">        marks, dollars);</Data></Cell>
+    <Cell><Data ss:Type="String">printf statements are often be split in several lines - but make sure not to break line inside the formatting string between double quotes.</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line29' class='wx_classic_code'&gt;        marks, dollars);&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line29annot' class='wx_classic_annot'&gt;printf statements are often be split in several lines - but make sure not to break line inside the formatting string between double quotes.&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_neo_bullet.gif' id='line29icon' name='icon' /&gt;&lt;/div&gt;&lt;div id='line29cbx' name='linecbx' class='wx_code_box'&gt;&lt;a id='line29' name='line' title='-' href='javascript:void()' onClick='revealOne(this);'&gt;        marks, dollars);&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String">&lt;div id='line29annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;printf statements are often be split in several lines - but make sure not to break line inside the formatting string between double quotes.&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">30.0</Data></Cell>
+    <Cell><Data ss:Type="String">}</Data></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=CONCATENATE(&quot;&lt;tr&gt;&lt;td width='16px'&gt;&quot;,IF(LEN(RC[-1])&gt;0,&quot;&lt;img height='16px' width='16px' src='webex_classic_bullup.gif'&gt;&quot;,&quot;&amp;nbsp;&quot;),&quot;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line&quot;,RC[-3],&quot;' class='wx_classic_code'&gt;&quot;,RC[-2],&quot;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;,IF(LEN(RC[-1])&gt;0,CONCATENATE(&quot;&lt;tr&gt;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td id='line&quot;,RC[-3],&quot;annot' class='wx_classic_annot'&gt;&quot;,RC[-1],&quot;&lt;/td&gt;&lt;/tr&gt;&quot;),&quot;&quot;))"><Data
+      ss:Type="String">&lt;tr&gt;&lt;td width='16px'&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;&lt;a href='#' id='line30' class='wx_classic_code'&gt;}&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</Data></Cell>
+    <Cell><Data ss:Type="String">&lt;div class='wx_code_brick'&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=CONCATENATE(&quot;&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='&quot;,IF(LEN(RC[-3])&gt;0,CONCATENATE(&quot;webex_neo_bullet.gif' id='line&quot;,RC[-5],&quot;icon' name='icon'&quot;),&quot;webex_empty_space.gif'&quot;),&quot; /&gt;&lt;/div&gt;&lt;div id='line&quot;,RC[-5],&quot;cbx' &quot;,IF(LEN(RC[-3])&gt;0,&quot;name='linecbx' &quot;,&quot;&quot;),&quot;class='wx_code_box&quot;,IF(LEN(RC[-3])&gt;0,&quot;&quot;,&quot;_noannot&quot;),&quot;'&gt;&lt;a id='line&quot;,RC[-5],&quot;' name='line' title='-'&quot;,IF(LEN(RC[-3])&gt;0,&quot; href='javascript:void()' onClick='revealOne(this);'&quot;,&quot;&quot;),&quot;&gt;&quot;,IF(LEN(RC[-4])=0,&quot;  &quot;,RC[-4]),&quot;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&quot;)"><Data
+      ss:Type="String">&lt;div class='wx_icon_box'&gt;&lt;img class='wx_icon' src='webex_empty_space.gif' /&gt;&lt;/div&gt;&lt;div id='line30cbx' class='wx_code_box_noannot'&gt;&lt;a id='line30' name='line' title='-'&gt;}&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</Data></Cell>
+    <Cell
+     ss:Formula="=IF(LEN(RC[-4])&gt;0,CONCATENATE(&quot;&lt;div id='line&quot;,RC[-6],&quot;annot' name='annot' class='wx_annot_brick'&gt;&lt;div class='wx_annot_box'&gt;&quot;,RC[-4],&quot;&lt;/div&gt;&lt;/div&gt;&quot;),&quot;&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>0</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+     <ActiveCol>4</ActiveCol>
+     <RangeSelection>R2C5:R31C7</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

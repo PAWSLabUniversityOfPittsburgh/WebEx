@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="WebEx" default="dist" basedir=".">
+	<!-- Imports -->
+	<import file="../ant_global.xml" />
+
+	<!-- Folder variables -->
+	<property name="context_path" value="/webex"/>
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="web" location="web"/>
+	<property name="paws-webex-jar" location="${web}/WEB-INF/lib/paws-webex.jar"/>
+	<property name="paws-cbum-jar" location="${web}/WEB-INF/lib/paws-cbum.jar"/>
+	<property name="paws-kt-jar" location="${web}/WEB-INF/lib/paws-kt.jar"/>
+	<property name="paws-core-jar" location="${web}/WEB-INF/lib/paws-core.jar"/>
+	<property name="apache-lang-commons" location="${web}/WEB-INF/lib/commons-lang.jar"/>
+	<property name="war_file" location="webex.war"/>
+
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}"/>
+		<delete file="${paws-webex-jar}"/>
+	</target>	
+	
+	<target name="init" depends="clean">
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}" debug="on"
+			classpath="${catalina_home}/lib/servlet-api.jar;
+				${catalina_home}/lib/jsp-api.jar;${paws-cbum-jar};${paws-kt-jar};${paws-core-jar};
+				${apache-lang-commons}"
+		/>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution" >
+		<!-- Build KT JAR file -->
+		<jar destfile="${paws-webex-jar}" basedir="${build}"/>
+	</target>
+
+	<!--
+	<target name="deploy.mac" depends="dist" description="deploy on Mac" >
+		<copy todir="/Library/tomcat/webapps/webex/">
+			<fileset file="${web}/**"/>
+		</copy>
+	</target> -->
+
+	<target name="war" depends="dist" description="Create WAR file"	>
+		<war destfile="${war_file}" webxml="web/WEB-INF/web.xml">
+		  <fileset dir="web" />
+		  <lib dir="web/WEB-INF/lib" />
+		</war>
+	</target>
+
+	<target name="deploy.loc.mac" description="Install on local mac" depends="war,undeploy.loc.mac">
+		<t_deploy url="${t_manager}" username="${t_username}" password="${t_password}"
+			path="${context_path}" war="${war_file}"/>
+	</target>
+
+	<target name="reload.loc.mac" description="Reload on local mac" depends="war">
+		<t_reload url="${t_manager}" username="${t_username}" password="${t_password}"
+			path="${context_path}"/>
+	</target>
+
+	<target name="undeploy.loc.mac" description="Undeploy on local mac">
+		<t_undeploy url="${t_manager}" username="${t_username}" password="${t_password}"
+			path="${context_path}"/>
+	</target>
+
+	
+</project>

@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="webex_classic_c2_files/webex.css" rel="stylesheet" type="text/css">
+
+<title>WebEx Classic. C</title>
+<script language="JavaScript" src="webex_classic_c2_files/prototype.js"></script>
+<script language="JavaScript" type="text/javascript">
+function revealOne(anchor)
+{
+	var name = anchor.id;
+	// zero-out first
+	var to_zero = null;
+	/*to_zero = $A(document.getElementsByName('icon'));
+	to_zero.each(
+		function(node){node.src='webex_classic_bullup.gif';}
+	);*/
+	to_zero = $A(document.getElementsByName('line'));
+	to_zero.each(
+		function(node){node.title='click to see explanation';}
+	);
+	to_zero = $A(document.getElementsByName('linecbx'));
+	to_zero.each(
+		function(node){node.className=node.className.split('_selected')[0]; node.onClick = null; }
+	);
+	to_zero = $A(document.getElementsByName('annot'));
+	to_zero.each(
+		function(node){node.className='wx_annot_row';}
+	);
+	// show then
+	$(name).title='';
+	$(name+'cbx').className+='_selected';
+	$(name+'cbx').onClick = 'revealOne(this)';
+	$(name+'annot').className='wx_annot_row_shown';
+	var gif_file = $(name+'icon').src;
+	if(gif_file.indexOf('_chk')==-1)
+		$(name+'icon').src = gif_file.split('.gif')[0] + '_chk.gif';
+	um_update('nothing');
+}
+var mvy_req = null;
+function um_update(time)
+{ 
+	var params = $H({usr:'myudelson', grp:'admins', sid:'xxOxx', app:'3', act:'helloworld.c', res:'-1', svc:'tryingout', sub:'2'});
+	$('notify_pane').innerHTML = '<img src="progress20.gif"/>'
+	mvy_req = new Ajax.Request(
+		'http://localhost:8080/webex/cumulateproxy', 
+		{ 
+			method: "post", 
+			parameters: params,
+			onSuccess: function(){ $('notify_pane').innerHTML=''; },
+			onFailure: function(){ $('notify_pane').innerHTML='<img class="wx_icon" src="warning.gif"/> Warning! there is no connection to the server. Your progress might be lost.';}
+ 			//onComplete: function(){ alert('Comp');}
+		} 
+	);
+}
+/**/	
+</script>
+<style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+
+.firebugHighlight {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: #3875d7;
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: transparent;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.firebugRulerH {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url(chrome://firebug/skin/rulerH.png) repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url(chrome://firebug/skin/rulerV.png) repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483647;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+/*.firebugHighlightGroup .firebugLayoutBox {
+    background-color: transparent;
+}
+
+.firebugHighlightBox {
+    background-color: Blue !important;
+}*/
+
+.firebugLayoutLine {
+    z-index: 2147483647;
+    background-color: #000000;
+    opacity: 0.4;
+}
+
+.firebugLayoutLineLeft,
+.firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop,
+.firebugLayoutLineBottom {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+</style></head><body>
+
+<img src="webex_classic_c2_files/webex_neo_bullet_white.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green1.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green2.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green3.gif" height="16" width="16">
+<br>
+<img src="webex_classic_c2_files/webex_neo_bullet_white_chk.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green1_chk.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green2_chk.gif" height="16" width="16">
+<img src="webex_classic_c2_files/webex_neo_bullet_green3_chk.gif" height="16" width="16">
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+	<!-- mini help -->
+	<tbody><tr class="wx_help_row"><td colspan="2"><strong>Tip:</strong> To see explanations click on the text of those lines that have a bullet (<img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif">) next to them</td></tr>
+	<tr class="wx_help_row"><td colspan="2"><strong>Tip:</strong> To see explanations click on the text of lines that have a bullet (<img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif">) next to them. Checkmark (<img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white_chk.gif">)
+means you have alreadfy seen the explanations to this line before.
+Color denotes whether none, few, good number of, or a lot of (<img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif"> <img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_green1.gif"> <img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_green2.gif"> <img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_green3.gif">) your classmates viewed the explanation.</td></tr>
+
+	<tr><td colspan="2" id="notify_pane" style="margin-top: 10px; margin-bottom: 10px; font-size: 10pt; color: rgb(153, 0, 0);" height="20"></td></tr>
+	<!-- title -->
+	<tr class="wx_title_row">
+		<td class="wx_icon_cell"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line0icon" name="icon"></td>
+		<td class="wx_title_cell" id="line0cbx" name="linecbx"><a id="line0" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">Exchange Kiosk C Example</a></td>
+	</tr>
+	<tr class="wx_annot_row" id="line0annot" name="annot">
+		<td>&nbsp;</td>
+		<td class="wx_annot_cell">The whole example is kind of nice.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	
+	<tr class="wx_code_row">
+		<td class="wx_icon_cell"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white_chk.gif" id="line99icon" name="icon"></td>
+		<td class="wx_code_cell_selected" id="line99cbx" name="linecbx"><a id="line99" name="line" title="" href="javascript:void(0)" onclick="revealOne(this);">    printf("For %6.2f marks you will get %6.2f dollars! ", 
+        marks, dollars);</a></td>
+	</tr>
+	<tr class="wx_annot_row_shown" id="line99annot" name="annot">
+		<td>&nbsp;</td>
+		<td class="wx_annot_cell">The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. The
+whole example is kind of nice. The whole example is kind of nice. </td>
+	</tr>
+</tbody></table>
+
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+
+<div class="wx_brick"><div class="wx_help_box"><strong>Tip (classic):</strong> To see explanations click on the text of those lines that have a bullet (<img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif">) next to them</div></div>
+
+<div class="wx_brick"><div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line0icon" name="icon"></div><div id="line0cbx" name="linecbx" class="wx_title_box"><a id="line0" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">Exchange Kiosk C Example</a></div></div>	<div id="line0annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">The whole example is kind of nice.</div></div>
+
+<div>&nbsp;</div>
+
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line1icon" name="icon"></div><div id="line1cbx" name="linecbx" class="wx_code_box"><a id="line1" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">/*    Example: Exchange kiosk</a></div></div>	<div id="line1annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">This comment is known as header comment. It provides details about the program: author, goal, version, content, etc.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line2cbx" class="wx_code_box_noannot"><a id="line2" name="line" title="click to see explanation">    Course: IS 0012</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line3cbx" class="wx_code_box_noannot"><a id="line3" name="line" title="click to see explanation">    Author: Peter Brusilovsky</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line4cbx" class="wx_code_box_noannot"><a id="line4" name="line" title="click to see explanation">  </a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line5cbx" class="wx_code_box_noannot"><a id="line5" name="line" title="click to see explanation">    This program calculates the amount of dollars</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line6cbx" class="wx_code_box_noannot"><a id="line6" name="line" title="click to see explanation">    received in an exchange kiosk for the given</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line7cbx" class="wx_code_box_noannot"><a id="line7" name="line" title="click to see explanation">    amount in German marks</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line8cbx" class="wx_code_box_noannot"><a id="line8" name="line" title="click to see explanation">*/</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line9cbx" class="wx_code_box_noannot"><a id="line9" name="line" title="click to see explanation">  </a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line10icon" name="icon"></div><div id="line10cbx" name="linecbx" class="wx_code_box"><a id="line10" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">#include <stdio.h></stdio.h></a></div></div>	<div id="line10annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">We need this line since we are using printf</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line11cbx" class="wx_code_box_noannot"><a id="line11" name="line" title="click to see explanation">  </a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line12cbx" class="wx_code_box_noannot"><a id="line12" name="line" title="click to see explanation">void main()</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line13cbx" class="wx_code_box_noannot"><a id="line13" name="line" title="click to see explanation">{</a></div></div>	
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line14icon" name="icon"></div><div id="line14cbx" name="linecbx" class="wx_code_box"><a id="line14" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    float dollars_for_mark; /* exchange rate */</a></div></div>	<div id="line14annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Floating point variable dollars_for_mark is declared. Comment helps to understand what will be stored in this variable.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line15icon" name="icon"></div><div id="line15cbx" name="linecbx" class="wx_code_box"><a id="line15" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    int commission; /* comission in dollars */</a></div></div>	<div id="line15annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Integer variable commission is declared. Comment helps to understand what will be stored in this variable.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line16icon" name="icon"></div><div id="line16cbx" name="linecbx" class="wx_code_box"><a id="line16" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    float marks; /* marks given */</a></div></div>	<div id="line16annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Floating point variable marks is declared. Comment helps to understand what will be stored in this variable.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line17icon" name="icon"></div><div id="line17cbx" name="linecbx" class="wx_code_box"><a id="line17" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    float dollars; /* dollars returned */</a></div></div>	<div id="line17annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Floating point variable dollars is declared. Comment helps to understand what will be stored in this variable.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line18icon" name="icon"></div><div id="line18cbx" name="linecbx" class="wx_code_box"><a id="line18" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">  </a></div></div>	<div id="line18annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Using empty lines to separate program parts helps to make it more readable</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line19icon" name="icon"></div><div id="line19cbx" name="linecbx" class="wx_code_box"><a id="line19" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    /* get data */</a></div></div>	<div id="line19annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Comments at the beginning of a program logical part helps tp understand what's going on.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line20icon" name="icon"></div><div id="line20cbx" name="linecbx" class="wx_code_box"><a id="line20" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    dollars_for_mark = 0.666;</a></div></div>	<div id="line20annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">This
+is a simple assignment statement. Variable of type float receives a
+floating point value 0.666. Yet, there is a conversion here: by default
+all floating point constants are of type double. So, C will convert
+0.666 from double to float without the los</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line21icon" name="icon"></div><div id="line21cbx" name="linecbx" class="wx_code_box"><a id="line21" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    commission = 3;</a></div></div>	<div id="line21annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">This is a simple assignment statement. Integer variable receives an integer value.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line22icon" name="icon"></div><div id="line22cbx" name="linecbx" class="wx_code_box"><a id="line22" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    marks = 100;</a></div></div>	<div id="line22annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Floating
+point variable received integer value. C will do the conversion from
+int to float, but no information is lost in this case.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line23icon" name="icon"></div><div id="line23cbx" name="linecbx" class="wx_code_box"><a id="line23" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">  </a></div></div>	<div id="line23annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Using empty lines to separate program parts helps to make it more readable</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line24icon" name="icon"></div><div id="line24cbx" name="linecbx" class="wx_code_box"><a id="line24" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    /* calculate USD */</a></div></div>	<div id="line24annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Comments at the beginning of a program logical part helps tp understand what's going on.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line25icon" name="icon"></div><div id="line25cbx" name="linecbx" class="wx_code_box"><a id="line25" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    dollars = marks * dollars_for_mark - commission;</a></div></div>	<div id="line25annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">This
+line calculates the amount of dollars received using the exchange
+formula. Multiplication is executed first due to its higher priority.
+Blanks that separate operation sign (like = or *) from operands make
+the expression more redable</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line26icon" name="icon"></div><div id="line26cbx" name="linecbx" class="wx_code_box"><a id="line26" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">  </a></div></div>	<div id="line26annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Using empty lines to separate program parts helps to make it more readable</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line27icon" name="icon"></div><div id="line27cbx" name="linecbx" class="wx_code_box"><a id="line27" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    /* print results */</a></div></div>	<div id="line27annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">Comments at the beginning of a program logical part helps tp understand what's going on.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line28icon" name="icon"></div><div id="line28cbx" name="linecbx" class="wx_code_box"><a id="line28" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">    printf("For %6.2f marks you will get %6.2f dollars! ",</a></div></div>	<div id="line28annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">This
+line prints results. All numbers are printed in 6.2 format - it prints
+exactly 2 digits after decimal point - representing cents and German
+pfennings</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_neo_bullet_white.gif" id="line29icon" name="icon"></div><div id="line29cbx" name="linecbx" class="wx_code_box"><a id="line29" name="line" title="click to see explanation" href="javascript:void(0)" onclick="revealOne(this);">        marks, dollars);</a></div></div>	<div id="line29annot" name="annot" class="wx_annot_row"><div class="wx_annot_box">printf
+statements are often be split in several lines - but make sure not to
+break line inside the formatting string between double quotes.</div></div>
+<div class="wx_brick">	<div class="wx_icon_box"><img class="wx_icon" src="webex_classic_c2_files/webex_empty_space.gif"></div><div id="line30cbx" class="wx_code_box_noannot"><a id="line30" name="line" title="click to see explanation">}</a></div></div>	
+
+</body></html>

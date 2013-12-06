@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<resource-ref>
+		<res-ref-name>jdbc/webex</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+	<context-param>
+		<param-name>um</param-name>
+		<param-value>http://localhost:8080/cbum/um</param-value>  
+<!--		<param-value>http://adapt2.sis.pitt.edu/cbum/um</param-value>  -->
+	</context-param>
+
+	<context-param>
+		<param-name>ummanager</param-name>
+		<param-value>http://localhost:8080/cbum/ReportManager</param-value>  
+<!-- 		<param-value>http://adapt2.sis.pitt.edu/cbum/ReportManager</param-value>  --> 
+	</context-param>
+	
+	<servlet>
+		<servlet-name>Dissection</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.Dissection</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dissection</servlet-name>
+		<url-pattern>/Dissection</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Dissection2</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.Dissection2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dissection2</servlet-name>
+		<url-pattern>/Dissection2</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DissectionAquaAJAX</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.DissectionAquaAJAX</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DissectionAquaAJAX</servlet-name>
+		<url-pattern>/DissectionAJAX</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WebexRSS</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.WebexRSS</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebexRSS</servlet-name>
+		<url-pattern>/feed</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebexRSS</servlet-name>
+		<url-pattern>/restricted/feed</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WebexRDF</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.WebexRDF</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WebexRDF</servlet-name>
+		<url-pattern>/webex.rdf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WebexRDF</servlet-name>
+		<url-pattern>/webex_txt.rdf</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CUMULATEProxy</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.CUMULATEProxy</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CUMULATEProxy</servlet-name>
+		<url-pattern>/cumulateproxy</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JeliotJNLPGenerator</servlet-name>
+		<servlet-class>edu.pitt.sis.paws.webex.JeliotJNLPGenerator</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JeliotJNLPGenerator</servlet-name>
+		<url-pattern>/jeliot_webex.jnlp</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Sequrity Settings -->
+	
+	<session-config>
+		<session-timeout>180</session-timeout>
+	</session-config>
+	<security-role>
+		<description>Any user of the system</description>
+		<role-name>user</role-name>
+	</security-role>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Entire Application</web-resource-name>
+			<url-pattern>/restricted/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>PTest-form</realm-name>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/relogin.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+</web-app>

@@ -1,0 +1,314 @@
+/*
+ * Dissection servlet. Line by line comments
+ */
+package com.a2teal.actserv.webex;
+
+import java.io.*;
+import java.lang.*;
+import java.net.*;
+import java.sql.*;
+import java.util.*;
+import java.text.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import com.a2teal.um.Structures.*;
+import com.a2teal.Y2.*;
+
+public class DissectionSN extends HttpServlet
+{
+	//Context parameters
+	private static final String CTXT_UMM_SERVLET = "ummanager";
+	// Context values
+	public static String UMM_SERVLET = null;	
+	
+	// Other constants
+	private final static String[] social_icons = {
+		"/webex/system/ic-box.gif",
+		"/webex/system/ic-box-check.gif"};
+	private final static String[] icon_styles = {
+		" class='webex_bullet_box'",
+		" class='webex_bullet_check'"};
+	public final static String[] social_progress = {"SocioBG1",
+		"SocioBG2","SocioBG3","SocioBG4"};
+	
+	private Connection con;
+	private PrintWriter out;
+ 
+	public void init(ServletConfig conf) throws ServletException
+	{
+	 
+		super.init(conf);
+		try
+		{
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			 con =DriverManager.getConnection("jdbc:odbc:Dissection", "", "");
+		}
+		catch(Exception e) { System.err.println("init:\n"+e); }
+	 
+	}
+	public static UserProfileRecordList getWebexProfile(String u_log, 
+		String _act) throws IOException
+	{
+		URL servlet_url = new URL(UMM_SERVLET + "?act=wp&id=" + u_log +
+			"&id2=" + _act);
+		URL url = new URL(servlet_url.toExternalForm());
+		URLConnection con = url.openConnection();
+		InputStream in = con.getInputStream();
+		ObjectInputStream result = new ObjectInputStream(in);
+		UserProfileRecordList uprlist = null;
+		try{ uprlist = (UserProfileRecordList)result.readObject(); }
+		catch(Exception e) { System.err.println(e); }
+//System.err.println("SM: user profile " + (up!=null));
+//System.err.println("SM: user profile user " + (up.user!=null));
+//System.err.println("SM: user profile acts " + (up.activities!=null));
+		return uprlist;
+	}
+	public void doGet(HttpServletRequest req,
+			HttpServletResponse res)
+		throws ServletException, IOException {
+		String query = req.getQueryString(); 
+		String strline = req.getParameter("intline");
+		String program = req.getParameter("program");
+		String kt_sid = req.getParameter("kt_sid");
+		String gid = req.getParameter("gid");
+		if(gid==null)gid="-1";
+		String kt_user = req.getParameter("kt_user");
+			// vvvvvvvv Inserted by Michael Yudelson
+		String report = req.getParameter("report");
+		if (report == null) report = "";/**/
+		HttpSession session = req.getSession();
+		
+		ServletContext context = getServletContext();
+		String UMServlet = context.getInitParameter("UMServlet");
+		// Interface options
+		boolean progress = false;
+		boolean social = false;
+		String intf = req.getParameter("intf");
+		if(intf != null)
+		{
+			social = (intf.toUpperCase().indexOf("S")!=-1)?true:false;
+			progress = (intf.toUpperCase().indexOf("P")!=-1)?true:false;
+		}
+		
+	//System.err.println("UMServlet " + UMServlet);
+			// ^^^^^^^^ Inserted by Michael Yudelson
+
+//vvvvvvvvvv SOCIAL NAVIGATION by Michael Yudelson
+		UMM_SERVLET = context.getInitParameter(CTXT_UMM_SERVLET);
+		UserProfileRecordList uprlist = null;
+		try{ uprlist = getWebexProfile(kt_user,program); }
+		catch(Exception e) { System.err.println(e); }
+//^^^^^^^^^^ SOCIAL NAVIGATION by Michael Yudelson
+
+		
+		res.setContentType("text/html");
+	
+		try {
+			out = res.getWriter();
+			// vvvvvvvv Inserted by Michael Yudelson
+			// ^^^^^^^^ Inserted by Michael Yudelson
+	
+			// vvvvvvvv Inserted by Michael Yudelson
+			out.println("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>");
+			out.println("<html>");
+			out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
+			out.println("<link href='/webex/system/A2TeAL.css' rel='stylesheet' type='text/css'>");
+			
+			// ^^^^^^^^ Inserted by Michael Yudelson
+	
+	
+			out.println("<head>");
+			out.println("<title> Example" + program + "</title>");
+			out.println("</head>");
+			
+			// vvvvvvvv Inserted by Michael Yudelson
+	//		out.println("<script languag='javascript'>");
+	//		out.println("	function Report()");
+	//		out.println("	{");
+	//		out.println("		window.open(\"http://kt2.exp.sis.pitt.edu:8080/Y2/kt/ShowLeft?progress=yes\",\"leftFrame\");");
+	//		out.println("	}");
+	//		out.println("</script>");
+			// ^^^^^^^ Inserted by Michael Yudelson
+	
+			out.println("<body>");
+
+			if (strline==null||program==null||kt_sid==null||kt_user==null) {
+				out.println("<H3>Invalid parament</H3>");
+				return;
+			}
+			int intline = Integer.parseInt(strline);
+			int offset=5,i=0;
+			int lineno=0;
+	
+			// ATTN INTLINE HAS TO BE >0 to send an info into UM
+			String svc = "";
+			// THE SVC/TRAIL PARAMETER
+//System.err.println("Dissection retrieving trail par "+sgtSessionManager.TRAIL_PAR+"="+(String)session.getAttribute(sgtSessionManager.TRAIL_PAR) + " session" + session.getId());				
+			svc = req.getParameter(sgtSessionManager.TRAIL_PAR);
+			String svc_s = "";
+			if(svc == null) {svc = ""; svc_s = "";}
+			else svc_s = "&svc=" + svc;
+//System.err.println("Dissection retrieving trail par from req "+sgtSessionManager.TRAIL_PAR+"="+svc);				
+			if (intline>0)
+			{
+				URLConnection dbpc = (new URL(UMServlet + "?kt_user="+kt_user+"&kt_sid="+kt_sid+"&app=3&activity="+program+"&activity_id="+intline+"&result=1&gid="+gid+svc_s)).openConnection();
+				BufferedReader in = new BufferedReader(new InputStreamReader(dbpc.getInputStream()));
+	//System.err.println("Dissection: action reported");
+				//String inputLine;
+				//while ((inputLine = in.readLine()) != null) 
+				//    out.println(inputLine);
+				//in.close();
+			}
+	
+//			out.println("<B><H3>Example "+program+" </H3></b></font>");
+			out.println("<font size=-1>Click on a bullet to see the annotation. </font><p></p>");
+	
+			String code="",comment="",tmp="",display="";
+			String sql = "SELECT Code,Comments,LNo FROM Dis where ProgID =" + program + "  order by LNo";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			byte[] com = new byte[4096];
+			int count;        
+			out.println("<table width='100%' cellspacing='2' cellpadding='0'>");
+			while(rs.next())
+			{
+				lineno = rs.getInt("LNo");
+				code = convertString(rs.getString("Code"));
+				count=rs.getAsciiStream("Comments").read(com);
+				if (count<1) comment="";
+				else comment = (new String(com,0,count)).trim();
+				
+				out.println("<tr>");
+
+				boolean annotated = (comment.length()!=0);
+				boolean annot_open = (lineno==intline);
+
+				UserProfileRecord upr = uprlist.findByAcivity((new Integer(lineno)).toString());
+				int u_click = 0;
+				int o_click = 0;
+				String icon_style = "";
+				String social_icon = "";
+				if(upr!=null)
+				{
+					u_click = (int)upr.u_progr; //SocialNavigation.getClickLevel(upr.u_click);
+					
+					o_click = SocialNavigation.getClickLevel((int)upr.o_click);
+					
+					/*icon_style = (progress)?icon_styles[u_click]:icon_styles[0];
+					social_icon = (annotated)?("<img src='"+((progress)?
+						social_icons[u_click]:
+						social_icons[0])+"' border='0'>"):
+						"&nbsp;";/**/
+						
+						
+					u_click = (u_click>0)?1:0;
+//					icon_GIF = "<img src='" + social_iconGIF[u_click] +"' border=0/>";
+				}
+				social_icon = (annotated)?
+					("<img src='"+((annot_open)?social_icons[1]:
+					((progress)?
+					social_icons[u_click]:
+					social_icons[0])
+					)+"' border='0'>")
+						:"&nbsp;";
+//	System.err.println("annotated?="+annotated + " annot_open?="+annot_open+" icon="+social_icon);
+				
+				String _url = "DissectionSN?intline=" + lineno + "&program=" + 
+					program + "&kt_sid=" + kt_sid + "&kt_user=" + kt_user +
+					"&report=" + report + "&gid=" + gid + 
+					"&svc=" + svc + "W" + u_click + o_click +
+//					((progress || social)?"&intf="+((progress)?"P":"") + ((social)?"S":""):"") +
+					((intf!=null)?("&intf="+ intf):"") + "#pos";
+				String icon_url = (annotated && !annot_open) ? (" href='" + _url +
+					"'") : "";
+
+				// Social navigation icon
+//System.err.println("annotated1?="+annotated+"");						
+				String icon_bg_style = 
+					(annotated)?((social)?" class='" + social_progress[o_click]+"'":""):" class='webex_bullet_empty'";
+						
+				out.print("<td width='16' " + icon_bg_style + ">");
+//				out.print("<p" + icon_style + "><a" + icon_url + ">&nbsp;</a></p>");
+				out.print("<a" + icon_url + ">"+social_icon+"</a>");
+				out.println("</td>");
+				
+				//Code if any
+				String code_style =  " class=" + 
+					((annotated && annot_open) ? 
+					"webex_code_annot_shadow" : ((annotated) ? 
+					"webex_code_annot":"webex_code"));
+				String anchor = (annot_open)?" name='pos'":"";
+
+				String onClick = (annotated && !annot_open)?(" onClick='window.document.location=\""+_url +"\";'"):"";;
+				out.print("<td" + onClick + ">");
+				out.print("<a" + code_style + anchor + ">"); 
+				out.print(code ); 
+				out.print("</a>"); 
+				out.println("</td>");
+				out.println("</tr>");
+
+				if(annot_open)
+				{
+					out.println("<tr height='16'>");
+					out.println("<td width='16'>&nbsp;</td>");
+					out.println("<td class=webex_annotation>" + comment + "</td>");
+					out.println("</tr>");
+				}
+			}
+			out.println("</table>");
+	 
+			rs.close();
+	 
+			stmt.close();
+	 
+		} catch(SQLException e) {
+	 
+			out.println(e+"<br>Error code:"+e.getErrorCode()+"<br>State:"+e.getSQLState()+"<br>An SQL Exception was thrown.");
+	 
+		} catch(IOException e) {
+	 
+			System.err.println(e+"\nAn IOException was thrown.");
+	 
+		}
+	 
+		out.println("</body>");
+	 
+		out.println("</html>");
+		out.close();/**/
+	}
+	
+	private String convertString(String str) {
+		StringBuffer sbuf = new StringBuffer();
+		if (str==null) return "";
+		if (str.length()==0) return "";
+		int i=0;
+		char c;
+		while (i<str.length()&&(c=str.charAt(i++))==' ') sbuf.append("&nbsp;");
+		i--;
+		for (; i<str.length(); i++) {
+			c = str.charAt(i);
+			if (c=='<')
+				sbuf.append("&lt;");
+			else if (c=='>')
+				sbuf.append("&gt;");
+			else if (c=='&')
+				sbuf.append("&amp;");
+			else if (c=='"')
+				sbuf.append("&quot;");
+			else sbuf.append(c);
+		}	
+		return sbuf.toString();
+	}
+	 
+	public void destroy(){
+	 
+		try{
+			con.close();
+		}catch(SQLException e) {
+			;
+		}
+	}
+}
+ 

@@ -215,13 +215,14 @@ public class Dissection2 extends HttpServlet
 		// end of -- Report ectivity
 
 		// Start the HTML
+		res.setContentType("text/html;charset=utf-8"); //ContentType/Charset should be set before the getWriter
 		PrintWriter out = res.getWriter();
 		
 		if(!req_mode.equals(REQ_MODE_TEXT_ONLY))
 		{
-			res.setContentType("text/html");
-			out.println("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>");
+			out.println("<!doctype html>");
 			out.println("<html>");
+			out.println("<meta charset='utf-8'/>");
 			out.println("<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>");
 			out.println("<link href='" + req.getContextPath()
 					+ "/system/A2TeAL.css' rel='stylesheet' type='text/css'>");

@@ -63,17 +63,17 @@ public class Dissection2 extends HttpServlet
 	private static final String REQ_MODE_TEXT_ONLY = "txt";
 
 	// Other constants
-	private final static String[] social_icons = { "/webex/system/ic-box.gif",
-			"/webex/system/ic-box-check.gif" };
+	private final static String[] social_icons = { "/system/ic-box.gif",
+			"/system/ic-box-check.gif" };
 
-	private final static String[] simple_icons = { "/webex/system/b_emp.gif", // Empty
+	private final static String[] simple_icons = { "/system/b_emp.gif", // Empty
 			// space
 			// - no
 			// comments
 			// at
 			// all
-			"/webex/system/b_up.gif", // Comment exists
-			"/webex/system/b_dn.gif" }; // Comment being viewed
+			"/system/b_up.gif", // Comment exists
+			"/system/b_dn.gif" }; // Comment being viewed
 
 	private final static String[] icon_styles = { " class='webex_bullet_box'",
 			" class='webex_bullet_check'" };
@@ -357,9 +357,9 @@ public class Dissection2 extends HttpServlet
 						o_click = (o_click > 3) ? 3 : o_click;
 
 						social_icon = (annotated) ? ("<img src='"
-								+ ((annot_open) ? social_icons[1]
-										: ((progress) ? social_icons[u_click]
-												: social_icons[0])) + "' border='0'>")
+								+ ((annot_open) ?  req.getContextPath() + social_icons[1]
+										: ((progress) ? req.getContextPath() + social_icons[u_click]
+												: req.getContextPath() + social_icons[0])) + "' border='0'>")
 								: "&nbsp;";
 						icon_bg_style = (annotated) ? ((social) ? " class='"
 								+ social_progress[o_click] + "'" : "")
@@ -389,9 +389,9 @@ public class Dissection2 extends HttpServlet
 					}// end of -- if SOCIAL NAVIGATION
 					else if (req_mode.equals(REQ_MODE_SIMPLE))
 					{
-						social_icon = (annotated) ? ((annot_open) ? simple_icons[2]
-								: simple_icons[1])
-								: simple_icons[0];
+						social_icon = (annotated) ? ((annot_open) ? req.getContextPath() + simple_icons[2]
+								: req.getContextPath() + simple_icons[1])
+								: req.getContextPath() + simple_icons[0];
 						social_icon = "<img src='" + social_icon
 								+ "' border='0'>";
 						icon_bg_style = "";
@@ -569,9 +569,9 @@ public class Dissection2 extends HttpServlet
 						o_click = (o_click > 3) ? 3 : o_click;
 
 						social_icon = (annotated) ? ("<img src='"
-								+ ((annot_open) ? social_icons[1]
-										: ((progress) ? social_icons[u_click]
-												: social_icons[0])) + "' border='0'>")
+								+ ((annot_open) ? req.getContextPath() + social_icons[1]
+										: ((progress) ? req.getContextPath() + social_icons[u_click]
+												: req.getContextPath() + social_icons[0])) + "' border='0'>")
 								: "&nbsp;";
 						icon_bg_style = (annotated) ? ((social) ? " class='"
 								+ social_progress[o_click] + "'" : "")
@@ -579,9 +579,9 @@ public class Dissection2 extends HttpServlet
 					}// end of -- if SOCIAL NAVIGATION
 					else if (req_mode.equals(REQ_MODE_SIMPLE))
 					{
-						social_icon = (annotated) ? ((annot_open) ? simple_icons[2]
-								: simple_icons[1])
-								: simple_icons[0];
+						social_icon = (annotated) ? ((annot_open) ? req.getContextPath() +simple_icons[2]
+								: req.getContextPath() + simple_icons[1])
+								: req.getContextPath() + simple_icons[0];
 						social_icon = "<img src='" + social_icon
 								+ "' border='0'>";
 						icon_bg_style = "";
